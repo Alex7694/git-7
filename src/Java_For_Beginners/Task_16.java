@@ -1,20 +1,16 @@
 package Java_For_Beginners;
-
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Task_16 {
     public static void main(String[] args) {
         try {
-            FileReader fileReader = new FileReader("E:\\ rtx.txt");
+            FileReader fileReader = new FileReader("src\\Java_For_Beginners\\file1.txt");
             BufferedReader reader = new BufferedReader(fileReader);
-            String text = reader.readLine();
-            while (text != null) {
-                System.out.println(text);
+            String text = null;
+            do {
                 text = reader.readLine();
-            }
+                System.out.println(text);
+            } while (text != null);
             fileReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("Файла не найдено");        }
@@ -24,6 +20,5 @@ public class Task_16 {
         }
     }
 }
-
 
 
