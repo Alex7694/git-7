@@ -1,13 +1,12 @@
 package Java_For_Beginners;
-
 import java.io.*;
 
 public class Task_17 {
     public static void main(String[] args) {
-        String str;
+        String str = null;
         BufferedReader  br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Признак конца - стоп");
-        try (FileWriter fw = new FileWriter("E:\\ rtx.txt", true)) {
+        try (FileWriter fw = new FileWriter("src\\Java_For_Beginners\\file2.txt", true)) {
             do {
                 System.out.println("Введи текст для добавления в файл. Нажми stop для остановки: ");
                 str = br.readLine();
