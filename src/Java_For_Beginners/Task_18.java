@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class Task_18 {
         public static void main(String[] args) {
             try {
-                FileReader readerline = new FileReader("E:\\ rtx.txt");
+                FileReader readerline = new FileReader("src\\Java_For_Beginners\\file3.txt");
                 BufferedReader bufferedReaderline = new BufferedReader(readerline);
-                String line;
+                String line = null;
+                int line_amout = 0;
                 System.out.println("Содержание файла:");
                 while ((line = bufferedReaderline.readLine()) != null) {
                     System.out.println(line);
+                    line_amout++;
                 }
                 readerline.close();
-                Scanner scanner = new Scanner(System.in);
-                System.out.println();
-                System.out.print("Введите  строку 1: ");
-                String s = scanner.nextLine();
-                System.out.print("Введите  строку 2: ");
-                String f = scanner.nextLine();
-                FileWriter w = new FileWriter("E:\\ rtx.txt", false);
+                FileWriter w = new FileWriter("src\\Java_For_Beginners\\file3.txt", false);
                 BufferedWriter bufferedWriter = new BufferedWriter(w);
-                bufferedWriter.write(s);
-                bufferedWriter.newLine();
-                bufferedWriter.write(f);
+                for(int i = 0; i < line_amout; i++) {
+                    System.out.print("Введи строку " + (i+1) + ": " );
+                    Scanner scanner = new Scanner(System.in);
+                    String s = scanner.nextLine();
+                    bufferedWriter.write(s);
+                    bufferedWriter.newLine();
+                }
                 bufferedWriter.close();
             } catch (FileNotFoundException exc) {
                 System.out.println("Файл не найден");
